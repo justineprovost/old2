@@ -3,5 +3,5 @@ var animIcons = lottie.loadAnimation({
   renderer: 'svg',
   loop: false,
   autoplay: true,
-  path: '../wildthoughts/images/raccoon/data.json' // the path to the animation json
+  path: '../wildthoughts/raccoon/data.json' // the path to the animation json
 });
