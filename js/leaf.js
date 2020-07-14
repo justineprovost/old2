@@ -3,5 +3,5 @@ var animIcons = lottie.loadAnimation({
   renderer: 'svg',
   loop: true,
   autoplay: true,
-  path: '../images/data.json' // the path to the animation json
+  path: '../wildthoughts/images/data.json' // the path to the animation json
 });
