@@ -112,11 +112,11 @@ var currentAns;
 var currentQuest = -1;
 
 var animals = [
-	'/../animated_squirrel.gif',
-	'/../animated_coyote.gif',
-	'/../animated_snek.gif',
-	'/../animated_borb.gif',
-	'/../animated_raccoon.gif'
+	'/wildthoughts/animated_squirrel.gif',
+	'/wildthoughts/animated_coyote.gif',
+	'/wildthoughts/animated_snek.gif',
+	'/wildthoughts/animated_borb.gif',
+	'/wildthoughts/animated_raccoon.gif'
 ]
 
 //Events//
