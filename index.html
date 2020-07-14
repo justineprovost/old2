@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wild Thoughts Quiz Website</title>
+	<link rel='stylesheet prefetch' href='https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css'>
+    <link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="fonts/stylesheet.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/jsn6kgd.css">
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" integrity="sha256-+9YNuItWuR4sbqeaNiJOxG0BvptYz4fbUXbIZoH5Jwo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav id="myNav" class="overlay">
+<!--
+  <span href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</span>
+  <div class="overlay-content">
+    <a href="#" class="one"><span>Home</span></a>
+    <a href="#about" class="two"></a><span>About</span>
+    <a href="pages/kellert.html" class="three"><span>Dr. Stephen Kellert</span></a>
+    <a href="pages/attitudes.html" class="four"><span>The 9 attitudes</span></a>
+  </div>
+-->
+</nav>
+
+<script>
+    // init controller
+    var controller = new ScrollMagic.Controller();
+</script>
+
+<section id="landing" >	<h1 data-aos="fade-up">Wild Thoughts</h1>
+		<h4>A Kellert Attitude Quiz</h4><div id="leaf_bg">
+		</div>
+		<div id="section04" class="demo">
+    <a><span></span></a>
+	</div>
+</section>
+
+<section class="steps">
+					<div id="reveal-elements">
+					    <div class="paw" id="step1"><img src="images/paw.svg"></div>
+					    <div class="paw" id="step2"><img src="images/paw.svg"></div>
+					    <div class="paw" id="step3"><img src="images/paw.svg"></div>
+					    <div class="paw" id="step4"><img src="images/paw.svg"></div>
+					    <div class="paw" id="step5"><img src="images/paw.svg"></div>
+					    <div class="paw" id="step6"><img src="images/paw.svg"></div>
+					</div>
+					<div class="spacer s2"></div>
+					<script>
+							// build scenes
+							var revealElements = document.getElementsByClassName("paw");
+							for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+								new ScrollMagic.Scene({
+													triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+													offset: 50,												 // start a little later
+													triggerHook: 0.8,
+												})
+												.setClassToggle(revealElements[i], "visible") // add class toggle
+								
+												.addTo(controller);
+							}
+					</script>
+</section>
+
+<section id="about">
+    <article><h4>This quiz was inspired by Fidino et al.'s 2018 study <a href="https://www.tandfonline.com/doi/pdf/10.1080/10871209.2018.1468943?casa_token=poalCX8hkLgAAAAA%3Ax7S0mwpijoLfBPJ9dLqMhBvHFPjmgC-Ug1fIF7Ky5KuQNVQr5WkaiHk0_f1-Wq_61P14os58BzKz&" target="_blank">"Assessing online opinions of wildlife through social media"</a>, in which researchers evaluated the public’s opinion towards North American species and classified them according to the <a href="https://research.ncsu.edu/ges/files/2014/03/Kellert1984_AttitudesUpdate.pdf" target="_blank">9 Kellert Attitudes.</a></h4><h4>Looking at species found in the Tiohtià:ke/Montréal environment, this quiz will help you find out which attitude category you fall into. </h4>
+    <div id="start" onclick="revealQuiz()" data-aos="fade-up" data-aos-duration="2000">
+    <div id="reveal_leaf"></div>
+    <a href="#questions" id="start_quiz"><h5>start</h5></a>
+    </div> </article> 
+		
+</section>
+
+<section id="questions" class="question0">
+	<div id="quest_container">
+        <form id="quest_form">
+         <div id="quest_animal_container">
+            </div><img id="quest_animal">
+  		<h2 id="quest_title"></h2>
+	  			<div id="quest_ans_container">
+      					<article id="quest_answer"></article>
+                                   
+                    </div>
+                    <button id="quest_submit" type="submit"></button>
+  			</form>
+  			
+	</div>
+</section>
+
+<section id="naturalistic">
+	<article>
+		<h1>Naturalistic</h1>
+			<p>You see animals on the same level as any other living species, including humans. You love the outdoors and probably spend a lot of time there. </p><a href="#att_struc" class="seemore"><h5>explore all attitudes</h5></a></article>
+				
+</section>
+
+<section id="ecologistic">
+	<article>
+		<h1>Ecologistic</h1>
+			<p>You care for the environment. A lot. In your eyes, animals are part of a harmonious system that must be maintained. You strongly believe in causes where the protection of habitat for wildlife habitat are at play.</p><a href="#att_struc" class="seemore"><h5>explore all attitudes</h5></a></article>
+				
+</section>
+
+<section id="humanistic">
+	<article>
+		<h1>Humanistic</h1>
+			<p>You see animals as companions and you probably own a pet or two. You enjoy giving and receiving affection to other species, and will often post photos of yourself with them on social media.</p><a href="#att_struc" class="seemore"><h5>explore all attitudes</h5></a></article>
+				
+</section>
+
+<section id="moralistic">
+		<article>
+			<h1>Moralistic</h1>
+				<p>You think a lot about the treatment of animals. In fact, you're probably a vegetarian, and you often voice your opposition to the exploitation of and cruelty of animals.</p>
+					<a href="#att_struc" class="seemore"><h5>explore all attitudes</h5></a></article>
+</section>
+
+<section id="scientistic">
+	<article>
+		<h1>Scientistic</h1>
+			<p>You find animals fascinating from a scientific standpoint. You are fascinated with different species' physical attributes. You love learning about biological functioning and see most animals as specimens worthy of observation.</p><a href="#att_struc" class="seemore"><h5>explore all attitudes</h5></a></article>
+				
+</section>
+
+<section id="aesthetic">
+	<article>
+		<h1>Aesthetic</h1>
+			<p>You find animals very pleasing to the eye and mind. Everytime you encounter an animal, you look for the symbolism and the meaning behind the species.</p><a href="#att_struc" class="seemore"><h5>explore all attitudes</h5></a></article>
+				
+</section>
+
+<section id="utilitarian">
+	<article>
+		<h1>Utilitatian</h1>
+			<p>Animals don't bother you as long as you can get something from them. You have no issue with the hunting and selling of animal products, especially if these benefit you in some way. You probably own a fur coat and see no problem with that.</p><a href="#att_struc" class="seemore"><h5>explore all attitudes</h5></a></article>
+				
+</section>
+
+<section id="doministic">
+	<article>
+		<h1>Doministic</h1>
+			<p>You believe that animals should be controlled and subdued. You probably enjoy sports involving animals such as horse racing, fishing and hunting.</p><a href="#att_struc" class="seemore"><h5>explore all attitudes</h5></a></article>
+				
+</section>
+
+<section id="negativistic">
+	<article>
+		<h1>Negativistic</h1>
+			<p>You really don't like animals. In fact, you try to avoid them at all costs. Perhaps this is because you fear them. But what is there to fear? Only you know the answer.</p><a href="#att_struc" class="seemore"><h5>explore all attitudes</h5></a>
+	</article>
+			
+</section>
+
+
+
+<section id="att_struc">
+<article class="att_disp" data-aos="fade-up" data-aos-duration="2000">
+<h1 id="att_display_title">Negativistic</h1>
+<p id="att_display_text">You really don't like animals. In fact, you try to avoid them at all costs. Perhaps this is because you fear them. But what is there to fear? Only you know the answer. </p>
+    <div id="section05" class="demo2">
+    <div><span></span><h6>Slide to discover all 9 attitudes</h6></div>
+	</div>
+    </article>
+<div class="slidecontainer" data-aos="fade-up" data-aos-duration="2000">
+  <input type="range" min="0" max="8" value="0" class="slider" id="myRange">
+</div>
+</section>
+
+<script> 
+var slider = document.getElementById("myRange");
+var outputBg = document.getElementById("att_struc");
+var output = document.getElementById("att_display_title");
+var outputTxt = document.getElementById("att_display_text");
+output.innerHTML = "Negativistic";  //whatever that value is//
+
+slider.oninput = function() {  //oninput is an event
+  if (this.value >= 8) {
+      output.innerHTML = "Naturalistic";
+      outputBg.style.background = "#86A688";
+      outputTxt.innerHTML = "You see animals on the same level as any other living species, including humans. You love the outdoors and probably spend a lot of time there."
+      } 
+    else if (this.value >= 7) {
+        outputBg.style.background = "#95A683";
+          output.innerHTML = "Ecologistic";
+          outputTxt.innerHTML = "You care for the environment. A lot. In your eyes, animals are part of a harmonious system that must be maintained. You strongly believe in causes where the protection of habitat for wildlife habitat are at play.";
+                 } 
+            else if (this.value >= 6) {
+                outputBg.style.background = "#A7A57F";
+                  output.innerHTML = "Humanistic";
+                  outputTxt.innerHTML = "You see animals as companions and you probably own a pet or two. You enjoy giving and receiving affection to other species, and will often post photos of yourself with them on social media.";
+                         } 
+                else if (this.value >= 5) {
+                    outputBg.style.background = "#A9A57E";
+                              output.innerHTML = "Moralistic";
+                              outputTxt.innerHTML = "You think a lot about the treatment of animals. In fact, you're probably a vegetarian, and you often voice your opposition to the exploitation of and cruelty of animals.";
+                                     } 
+                        else if (this.value >= 4){
+                            outputBg.style.background = "#BCA37A";
+                        output.innerHTML = "Scientistic";
+                        outputTxt.innerHTML = "You find animals fascinating from a scientific standpoint. You are fascinated with different species' physical attributes. You love learning about biological functioning and see most animals as specimens worthy of observation."
+                        }
+                                else if (this.value >= 3){
+                                    outputBg.style.background = "#C2A377";
+                                        output.innerHTML = "Aesthetic";
+                                        outputTxt.innerHTML = "You find animals very pleasing to the eye and mind. Everytime you encounter an animal, you look for the symbolism and the meaning behind the species."
+                                        }
+    
+                                        else if (this.value >= 2){
+                                                outputBg.style.background = "#CFA375";
+                                                output.innerHTML = "Utilitarian";
+                                                outputTxt.innerHTML = "Animals don't bother you as long as you can get something from them. You have no issue with the hunting and selling of animal products, especially if these benefit you in some way. You probably own a fur coat and see no problem with that."
+                                                }
+                                                    else if (this.value >= 1){
+                                                        outputBg.style.background = "#D5A472";
+                                                        output.innerHTML = "Doministic";
+                                                        outputTxt.innerHTML = "You believe that animals should be controlled and subdued. You probably enjoy sports involving animals such as horse racing, fishing and hunting."
+                                                        }
+    else {
+        outputBg.style.background = "#E6A36F";
+        output.innerHTML = "Negativistic";
+        outputTxt.innerHTML = "You really don't like animals. In fact, you try to avoid them at all costs. Perhaps this is because you fear them. But what is there to fear? Only you know the answer."
+                 }
+    }
+</script>
+
+
+
+<script>
+  function revealQuiz() {
+    document.getElementById("questions").style.minHeight= "110vh"
+  }
+</script>
+
+<!-- <script>
+  function revealAtts() {
+    document.getElementById ("att_struc").style.display="auto";	
+  }
+</script> -->
+
+
+<span id="trigger" onclick="openNav()"><img src="images/nut.png"></span>
+
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%"
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%"
+  }
+</script>
+
+<script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
+<script  src="js/index.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/lottie.js"></script>
+<script src="js/raccoon.js"></script>
+<script src="js/leaf.js"></script>
+
+</body>
+</html>
