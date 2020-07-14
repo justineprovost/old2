@@ -669,14 +669,14 @@ content: 'reveal attitude';
 
 #quest_submit:after{
     content: 'next question';
-    padding-top: 7em;
+    padding-top: 10vh;
     left:0;
 font-family: 'pp_woodlandbold', serif;
     font-weight: 500;
     align-items: center;
     display: inline-block;
     align-items: center;
-    font-size:0.8em;
+    font-size:0.8rem;
     bottom:-10%;
     height: 3px;
     width: 100%;
